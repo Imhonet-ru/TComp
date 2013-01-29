@@ -4,7 +4,7 @@ namespace TComp;
 
 use TComp\Node\Node as BaseNode;
 
-class TComp_Composer
+class Composer
 {
 
     /**
