@@ -1,0 +1,7 @@
+{
+    "packages": {
+        "nikita2206/text-composer": {
+            "dev-master": { @composer.json }
+        }
+    }
+}
