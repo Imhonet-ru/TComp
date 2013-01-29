@@ -20,7 +20,7 @@ class WordSequence extends Node
 
     public function initialized()
     {
-        return empty($this->text);
+        return !empty($this->text);
     }
 
 }

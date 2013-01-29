@@ -38,7 +38,7 @@ class PluralizeableAdjectiveCountry extends Country
         "france"    => "Французские",
         "czech"     => "Чешские",
         "switzerland" => "Швейцарские",
-        "sweden"    => "Швецкие",
+        "sweden"    => "Шведские",
         "estonia"   => "Эстонские",
         "jamaica"   => "Ямайские",
         "japan"     => "Японские"

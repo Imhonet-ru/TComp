@@ -12,10 +12,18 @@ class Composer
      */
     protected $nodes = array();
 
+    /**
+     * @var \TComp\Node\Node
+     */
+    protected $lastNode;
 
     public function addNode(BaseNode $node)
     {
-        $this->nodes[] = $node;
+        if ($this->lastNode !== null && $node instanceof Node\Genderable) {
+            $this->lastNode->declineTo($node->getGender());
+        }
+
+        $this->nodes[] = $this->lastNode = $node;
         return $this;
     }
 
@@ -57,6 +65,7 @@ class Composer
         }
 
         $this->nodes = array();
+        $this->lastNode = null;
 
         return ucfirst(implode(" ", $text));
     }

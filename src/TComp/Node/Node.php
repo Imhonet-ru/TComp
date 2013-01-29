@@ -7,6 +7,8 @@ abstract class Node
 
     protected $add = "";
 
+    protected $decline = 0;
+
     public function shouldRemoveNextNoun()
     {
         return false;
@@ -16,6 +18,7 @@ abstract class Node
      * Can be used for adding punctuation marks after nodes.
      *
      * @param string $text
+     * @return Node
      */
     public function addText($text)
     {
@@ -26,6 +29,11 @@ abstract class Node
     public function getAddedText()
     {
         return $this->add;
+    }
+
+    public function declineTo($gender)
+    {
+        $this->decline = $gender;
     }
 
     /**
