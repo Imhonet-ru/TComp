@@ -96,4 +96,9 @@ class NounMusicGenre extends MusicGenre
         return self::$nouns[$this->genre];
     }
 
+    public function initialized()
+    {
+        return isset(self::$nouns[$this->genre]);
+    }
+
 }

@@ -13,4 +13,9 @@ class AdjectiveYear extends Year
         return $this->year . " года";
     }
 
+    public function initialized()
+    {
+        return (bool)(int)$this->year && is_numeric($this->year);
+    }
+
 }

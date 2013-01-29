@@ -16,6 +16,7 @@ class Composer
     public function addNode(BaseNode $node)
     {
         $this->nodes[] = $node;
+        return $this;
     }
 
     public function getNodes()
@@ -29,6 +30,10 @@ class Composer
 
         $removeNoun = false;
         foreach ($this->nodes as $node) {
+            if ($node->initialized() === false) {
+                continue;
+            }
+
             if ($removeNoun && $node instanceof Node\Noun) {
                 $removeNoun = false;
                 continue;
@@ -48,6 +53,8 @@ class Composer
 
             $text[] = $piece . $node->getAddedText();
         }
+
+        $this->nodes = array();
 
         return ucfirst(implode(" ", $text));
     }

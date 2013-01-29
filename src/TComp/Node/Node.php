@@ -28,4 +28,9 @@ abstract class Node
         return $this->add;
     }
 
+    /**
+     * @return bool
+     */
+    abstract public function initialized();
+
 }

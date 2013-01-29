@@ -21,4 +21,9 @@ class PluralizeableAdjectiveEpoch extends Epoch
         return self::$pluralizedAdjective[$this->epoch];
     }
 
+    public function initialized()
+    {
+        return isset(self::$pluralizedAdjective[$this->epoch]);
+    }
+
 }

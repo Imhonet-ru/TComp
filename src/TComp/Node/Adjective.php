@@ -6,4 +6,5 @@ class Adjective extends Word
 {
 
 
+
 }

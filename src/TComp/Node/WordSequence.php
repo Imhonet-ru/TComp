@@ -18,4 +18,9 @@ class WordSequence extends Node
         return $this->text;
     }
 
+    public function initialized()
+    {
+        return empty($this->text);
+    }
+
 }

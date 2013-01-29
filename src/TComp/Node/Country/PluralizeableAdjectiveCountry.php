@@ -49,4 +49,9 @@ class PluralizeableAdjectiveCountry extends Country
         return self::$pluralizedAdjectives[$this->countryCode];
     }
 
+    public function initialized()
+    {
+        return isset(self::$pluralizedAdjectives[$this->countryCode]);
+    }
+
 }

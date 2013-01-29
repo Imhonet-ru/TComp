@@ -102,4 +102,9 @@ class PluralizeableAdjectiveMusicGenre extends MusicGenre
         return $this->genre === "soundtrack";
     }
 
+    public function initialized()
+    {
+        return isset(self::$pluralizedAdjectives[$this->genre]);
+    }
+
 }
