@@ -47,6 +47,8 @@ class Composer
                 $piece = $node->getPluralizedAdjective();
             } elseif ($node instanceof Node\Adjectable) {
                 $piece = $node->getAdjective();
+            } elseif ($node instanceof Node\Nounable) {
+                $piece = $node->getNoun();
             } else {
                 $piece = "# unrecognized node type #";
             }
