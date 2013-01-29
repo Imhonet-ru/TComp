@@ -2,35 +2,35 @@
 
 namespace TComp\Node\Genre;
 
-use TComp\Node\PluralizeableAdjectable;
+use TComp\Node\Nounable;
 
-class PluralizeableAdjectiveMusicGenre extends MusicGenre
-    implements PluralizeableAdjectable
+class NounMusicGenre extends MusicGenre
+    implements Nounable
 {
 
-    static $pluralizedAdjectives = array(
-        "rock"              => "роковые",
-        "alt-rock"          => "альтернативные рок",
-        "garage_rock"       => "гаражные рок",
+    private static $nouns = array(
+        "rock"              => "рок",
+        "alt-rock"          => "альтернативный рок",
+        "garage_rock"       => "гаражный рок",
         "indie_rock"        => "инди-рок",
         "new_wave"          => "нью-вейв",
-        "classic_rock"      => "роковые",
+        "classic_rock"      => "классический рок",
         "blues_rock"        => "блюз-рок",
         "folk_rock"         => "фолк-рок",
         "hard_rock"         => "хард-рок",
-        "instrumental_rock" => "инструментально роковые",
+        "instrumental_rock" => "инструментальный рок",
         "pop_rock"          => "поп-рок",
-        "progressive_rock"  => "прогрессив рок",
-        "psy_rock"          => "психоделик роковые",
-        "rocknroll"         => "рок-н-рольные",
-        "punk_alt"          => "панк альтернативные",
-        "alternative"       => "альтернативные",
-        "punk"              => "панковые",
+        "progressive_rock"  => "прогрессив-рок",
+        "psy_rock"          => "психоделик-рок",
+        "rocknroll"         => "рок-н-ролл",
+        "punk_alt"          => "альтернативный панк",
+        "alternative"       => "альтернатива",
+        "punk"              => "панк",
         "hardcore_punk"     => "хардкор-панк",
         "pop_punk"          => "поп-панк",
         "post_punk"         => "пост-панк",
         "metal"             => "метал",
-        "alt_metal"         => "альтернативные метал",
+        "alt_metal"         => "альтернативный метал",
         "industrial"        => "индастриал",
         "metalcore"         => "металкор",
         "neo_metal"         => "нео-метал",
@@ -40,13 +40,13 @@ class PluralizeableAdjectiveMusicGenre extends MusicGenre
         "death_metal"       => "дэт-метал",
         "symphonic_metal"   => "симфоник-метал",
         "speed_metal"       => "спид-метал",
-        "traditional_metal" => "традиционные метал",
-        "heavy_metal"       => "хэви-метал",
+        "traditional_metal" => "традиционный метал",
+        "heavy_metal"       => "тяжелый метал",
         "trash_metal"       => "трэш-метал",
-        "extreme_metal"     => "экстремальные метал",
-        "black_metal"       => "черные метал",
+        "extreme_metal"     => "экстремальный метал",
+        "black_metal"       => "черный метал",
         "doom_metal"        => "дум-метал",
-        "electronic"        => "электронные",
+        "electronic"        => "электроника",
         "electro"           => "электро",
         "synth_pop"         => "синтипоп",
         "breakbeat"         => "брейкбит",
@@ -56,7 +56,7 @@ class PluralizeableAdjectiveMusicGenre extends MusicGenre
         "tech_house"        => "тек-хаус",
         "deep_house"        => "дип-хаус",
         "progressive_house" => "прогрессив-хаус",
-        "garage_house"      => "гаражные хаус",
+        "garage_house"      => "гаражный хаус",
         "acid_house"        => "эйсид хаус",
         "club_house"        => "клаб-хаус",
         "tribal_house"      => "трайбал хаус",
@@ -68,8 +68,8 @@ class PluralizeableAdjectiveMusicGenre extends MusicGenre
         "trip_hop"          => "трип-хоп",
         "acid_jazz"         => "эйсид джаз",
         "chillout"          => "чиллаут",
-        "experimental_electronic" => "эксперементально-электронные",
-        "trance"            => "трансовые",
+        "experimental_electronic" => "эксперементальная электроника",
+        "trance"            => "транс",
         "hard_trance"       => "хард транс",
         "progressive_trance" => "прогрессив транс",
         "psy_trance"        => "пси-транс",
@@ -78,28 +78,22 @@ class PluralizeableAdjectiveMusicGenre extends MusicGenre
         "reggae"            => "регги",
         "ska"               => "ска",
         "dub"               => "даб",
-        "jazz"              => "джазовые",
+        "jazz"              => "джаз",
         "easy_listening"    => "easy listening",
-        "blues"             => "блюзовые",
+        "blues"             => "блюз",
         "funk_soul_rnb"     => "фанк, соул, RnB",
         "country_folk"      => "кантри и фолк",
         "folk"              => "фолк",
         "country"           => "кантри",
-        "classic"           => "классические",
-        "misc"              => "разные",
+        "classic"           => "классика",
+        "misc"              => "разное",
         "christmas"         => "рождественские",
         "soundtrack"        => "саундтреки"
     );
 
-
-    public function getPluralizedAdjective()
+    public function getNoun()
     {
-        return self::$pluralizedAdjectives[$this->genre];
-    }
-
-    public function shouldRemoveNextNoun()
-    {
-        return $this->genre === "soundtrack";
+        return self::$nouns[$this->genre];
     }
 
 }
