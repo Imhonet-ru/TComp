@@ -5,7 +5,7 @@ require "vendor/autoload.php";
 $c = new \TComp\Composer();
 
 $c->addNode(new \TComp\Node\Country\AdjectiveCountry("russia"));
-$c->addNode((new \TComp\Node\GenderableNoun("музыка"))->setGender(\TComp\Node\Genderable::FEMALE));
+$c->addNode(new \TComp\Node\Genre\NounMusicGenre("electro"));
 $c->addNode(new \TComp\Node\Epoch\PluralizeableAdjectiveEpoch("90s"));
 
 echo $c->compose() . ".";

@@ -2,10 +2,11 @@
 
 namespace TComp\Node\Genre;
 
-use TComp\Node\Nounable;
+use TComp\Node\Nounable,
+    TComp\Node\Genderable;
 
 class NounMusicGenre extends MusicGenre
-    implements Nounable
+    implements Nounable, Genderable
 {
 
     private static $nouns = array(
@@ -99,6 +100,13 @@ class NounMusicGenre extends MusicGenre
     public function initialized()
     {
         return isset(self::$nouns[$this->genre]);
+    }
+
+    public function setGender($gender) { }
+
+    public function getGender()
+    {
+        return self::$genders[$this->genre];
     }
 
 }
