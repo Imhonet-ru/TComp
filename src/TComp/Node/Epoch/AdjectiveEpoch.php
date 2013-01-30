@@ -12,8 +12,8 @@ class AdjectiveEpoch extends Epoch
         "70s" => "семидесятых",
         "80s" => "восьмидесятых",
         "90s" => "девяностых",
-        "00s" => "нулевых",
-        "10s" => "десятых"
+        "00s" => "нулевых годов",
+        "10s" => "десятых годов"
     );
 
     public function getPluralizedAdjective()
