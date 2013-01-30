@@ -3,6 +3,7 @@
 namespace TComp\Node;
 
 class WordSequence extends Node
+    implements BasicTextNode
 {
 
     private $text;

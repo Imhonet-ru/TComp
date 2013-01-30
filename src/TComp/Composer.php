@@ -17,12 +17,10 @@ class Composer
      */
     protected $lastNode;
 
+    protected $capitalizeFirstChar = true;
+
     public function addNode(BaseNode $node)
     {
-        if ($this->lastNode !== null && $node instanceof Node\Declinable) {
-            $this->lastNode->declineTo($node->getDeclination());
-        }
-
         $this->nodes[] = $this->lastNode = $node;
         return $this;
     }
@@ -49,7 +47,7 @@ class Composer
 
             $removeNoun = $node->shouldRemoveNextNoun();
 
-            if ($node instanceof Node\WordSequence) {
+            if ($node instanceof Node\BasicTextNode) {
                 $piece = $node->getText();
             } elseif ($node instanceof Node\PluralizeableAdjectable) {
                 $piece = $node->getPluralizedAdjective();
@@ -58,7 +56,7 @@ class Composer
             } elseif ($node instanceof Node\Nounable) {
                 $piece = $node->getNoun();
             } else {
-                $piece = "# unrecognized node type #";
+                $piece = "# unrecognized node type \"" . get_class($node) . "\" #";
             }
 
             $text[] = $piece . $node->getAddedText();
@@ -67,7 +65,19 @@ class Composer
         $this->nodes = array();
         $this->lastNode = null;
 
-        return ucfirst(implode(" ", $text));
+        $text = implode(" ", $text);
+
+        if ($this->capitalizeFirstChar) {
+            $text = mb_strtoupper(mb_substr($text, 0, 1)) . mb_substr($text, 1);
+        }
+
+        return $text;
+    }
+
+    public function capitalizeFirstChar($capitalize = true)
+    {
+        $this->capitalizeFirstChar = $capitalize;
+        return $this;
     }
 
 }

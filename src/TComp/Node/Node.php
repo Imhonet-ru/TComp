@@ -31,9 +31,9 @@ abstract class Node
         return $this->add;
     }
 
-    public function declineTo($gender)
+    public function declineTo($decline)
     {
-        $this->decline = $gender;
+        $this->decline = $decline;
     }
 
     /**
