@@ -19,8 +19,8 @@ class Composer
 
     public function addNode(BaseNode $node)
     {
-        if ($this->lastNode !== null && $node instanceof Node\Genderable) {
-            $this->lastNode->declineTo($node->getGender());
+        if ($this->lastNode !== null && $node instanceof Node\Declinable) {
+            $this->lastNode->declineTo($node->getDeclination());
         }
 
         $this->nodes[] = $this->lastNode = $node;

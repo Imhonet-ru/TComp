@@ -3,10 +3,10 @@
 namespace TComp\Node\Genre;
 
 use TComp\Node\Nounable,
-    TComp\Node\Genderable;
+    TComp\Node\Declinable;
 
 class NounMusicGenre extends MusicGenre
-    implements Nounable, Genderable
+    implements Nounable, Declinable
 {
 
     private static $nouns = array(
@@ -102,9 +102,9 @@ class NounMusicGenre extends MusicGenre
         return isset(self::$nouns[$this->genre]);
     }
 
-    public function setGender($gender) { }
+    public function setDeclination($declination) { }
 
-    public function getGender()
+    public function getDeclination()
     {
         return self::$genders[$this->genre];
     }

@@ -86,8 +86,8 @@ abstract class MusicGenre extends Node
         "country"           => 2,
         "classic"           => 1,
         "misc"              => 2,
-        "christmas"         => 0,
-        "soundtrack"        => 0
+        "christmas"         => 3,
+        "soundtrack"        => 3
     );
 
     protected $genre;

@@ -3,21 +3,20 @@
 namespace TComp\Node;
 
 class GenderableNoun extends Noun
-    implements Genderable
+    implements Declinable
 {
 
-    protected $gender;
+    protected $declination = 0;
 
-
-    public function setGender($gender)
+    public function setDeclination($declination)
     {
-        $this->gender = $gender;
+        $this->declination = $declination;
         return $this;
     }
 
-    public function getGender()
+    public function getDeclination()
     {
-        return $this->gender;
+        return $this->declination;
     }
 
 }
