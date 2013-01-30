@@ -2,7 +2,7 @@
 
 namespace TComp\Node;
 
-class GenderableNoun extends Noun
+class DeclinableNoun extends Noun
     implements Declinable
 {
 
