@@ -19,21 +19,27 @@ if ($params["category"]) {
     $cat->setDeclination(\TComp\Node\Declinable::FEMALE);
 }
 
+$rank = new \TComp\Node\RankType\Rank("best");
+$rank->declineTo($cat->getDeclination());
+
 $country = new \TComp\Node\Country\AdjectiveCountry($params["country"]);
 $country->declineTo($cat->getDeclination());
-$epoch = new \TComp\Node\Epoch\PluralizeableAdjectiveEpoch($params["epoch"]);
+$epoch = new \TComp\Node\Epoch\AdjectiveEpoch($params["epoch"]);
 
+$c->addNode($rank);
 $c->addNode($country);
 $c->addNode($cat);
 $c->addNode($epoch);
 echo $c->compose(), "\n";
 
 
+$c->addNode($rank);
 $c->addNode($country);
 $c->addNode($cat);
 echo $c->compose(), "\n";
 
 
+$c->addNode($rank);
 $c->addNode($cat);
 echo $c->compose(), "\n";
 
@@ -43,18 +49,20 @@ $allPluralized->declineTo(\TComp\Node\Declinable::PLURALIZED);
 $country = new \TComp\Node\Country\AdjectiveCountry($params["country"]);
 $country->declineTo(\TComp\Node\Declinable::PLURALIZED);
 
+$rank->declineTo(\TComp\Node\Declinable::PLURALIZED);
+
 if (!$params["category"]) {
     $cat = new \TComp\Node\Noun("");
 }
 
-$c->addNode($allPluralized);
+$c->addNode($rank);
 $c->addNode($country);
 $c->addNode($cat);
 $c->addNode(new \TComp\Node\Noun("треки"));
 $c->addNode($epoch);
 echo $c->compose(), "\n";
 
-$c->addNode($allPluralized);
+$c->addNode($rank);
 $c->addNode($country);
 $c->addNode($cat);
 $c->addNode(new \TComp\Node\Noun("альбомы"));

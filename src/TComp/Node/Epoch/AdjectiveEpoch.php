@@ -4,7 +4,7 @@ namespace TComp\Node\Epoch;
 
 use TComp\Node\PluralizeableAdjectable;
 
-class PluralizeableAdjectiveEpoch extends Epoch
+class AdjectiveEpoch extends Epoch
     implements PluralizeableAdjectable
 {
 
